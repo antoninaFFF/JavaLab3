@@ -1,7 +1,6 @@
 package by.antonina.entities.thing;
 
-public class Weapon extends Thing {
-
+public abstract class Weapon extends Thing {
     private boolean loaded;
     private int caliber;
 
@@ -11,11 +10,25 @@ public class Weapon extends Thing {
         this.caliber = caliber;
     }
 
-    void load() {
+    public void load() {
+        this.loaded = true;
+        System.out.println(getName() + " заряжено.");
     }
 
-    void shoot() {
+    public void shoot() {
+        if (loaded) {
+            System.out.println(getName() + " производит выстрел!");
+            this.loaded = false;
+        } else {
+            System.out.println(getName() + " не заряжено!");
+        }
     }
-    //TODO: без реализации
 
+    public boolean isLoaded() {
+        return loaded;
+    }
+
+    public int getCaliber() {
+        return caliber;
+    }
 }

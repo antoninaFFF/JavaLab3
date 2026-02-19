@@ -1,10 +1,12 @@
 package by.antonina.entities;
 
+import java.util.Objects;
+
 public abstract class Entity {
 
     private final String name;
 
-    Entity(String name) {
+    public Entity(String name) {
         this.name = name;
     }
 
