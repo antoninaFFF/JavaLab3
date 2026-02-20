@@ -2,6 +2,7 @@ package by.antonina.entities.location;
 
 import by.antonina.entities.others.Entity;
 import by.antonina.entities.thing.Thing;
+import by.antonina.exception.LocationThingException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,10 +13,13 @@ public abstract class Location extends Entity {
     private final List<StateType> emotions;
     private final List<SignsType> signsTypes;
 
-    public Location(String name, List<Thing> containedItems, List<StateType> emotions, List<SignsType> signsTypes) {
+    public Location(String name, List<Thing> containedItems, List<StateType> emotions, List<SignsType> signsTypes) throws LocationThingException {
         super(name);
         if (containedItems!=null){
             this.containedItems = containedItems;
+        }
+        if (containedItems.isEmpty()){
+            throw new LocationThingException(this.getName());
         }
         this.emotions = emotions;
         this.signsTypes = signsTypes;

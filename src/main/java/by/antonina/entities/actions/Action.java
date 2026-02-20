@@ -21,7 +21,5 @@ public abstract class Action {
         return name;
     }
 
-    public void doo() {
-        System.out.println("это займет " + getDuration());
-    }
+    public abstract void doo();
 }

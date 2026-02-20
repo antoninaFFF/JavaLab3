@@ -8,6 +8,7 @@ import by.antonina.entities.location.Location;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class MainPerson extends Entity {
     private Location currentLocation;
@@ -38,5 +39,25 @@ public class MainPerson extends Entity {
 
     public void doo(Action action) {
         action.doo();
+    }
+
+    @Override
+    public String toString() {
+        return "MainPerson{" +
+               "currentLocation=" + currentLocation +
+               ", emotions=" + emotions +
+               '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        MainPerson that = (MainPerson) o;
+        return Objects.equals(currentLocation, that.currentLocation) && Objects.equals(emotions, that.emotions);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(currentLocation, emotions);
     }
 }

@@ -20,6 +20,7 @@ public class Huge extends Action {
         System.out.println("вещи будут перемещены из " + from.getName() + " в другоем место: " + to.getName());
         System.out.println("вещи которые будут перемещены" +(from.getContainedItems()));
         to.setContainedItems(from.getContainedItems());
-        super.doo();
+        System.out.println("это займет " + getDuration());
     }
+
 }
