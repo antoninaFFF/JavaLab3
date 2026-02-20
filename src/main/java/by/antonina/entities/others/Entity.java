@@ -1,6 +1,4 @@
-package by.antonina.entities;
-
-import java.util.Objects;
+package by.antonina.entities.others;
 
 public abstract class Entity {
 

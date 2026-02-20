@@ -1,6 +1,6 @@
 package by.antonina.entities.thing;
 
-import by.antonina.entities.Entity;
+import by.antonina.entities.others.Entity;
 
 import java.util.Objects;
 
@@ -32,5 +32,10 @@ public abstract class Thing extends Entity {
     @Override
     public int hashCode() {
         return Objects.hash(weight, fragile);
+    }
+
+    @Override
+    public String toString() {
+        return "\n"+ "вес: "+this.weight +" название "+this.getName();
     }
 }

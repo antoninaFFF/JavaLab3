@@ -8,11 +8,8 @@ public class Ammunition extends Thing {
         this.quantity = quantity;
     }
 
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
+    @Override
+    public int getWeight() {
+        return super.getWeight() * quantity;
     }
 }
