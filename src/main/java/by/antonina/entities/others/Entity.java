@@ -1,6 +1,6 @@
 package by.antonina.entities.others;
 
-public abstract class Entity {
+public abstract class Entity implements Nameble {
 
     private final String name;
 
@@ -8,6 +8,7 @@ public abstract class Entity {
         this.name = name;
     }
 
+    @Override
     public String getName() {
         return name;
     }
